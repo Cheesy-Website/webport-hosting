@@ -208,27 +208,7 @@ function setAddAsyncMethod( asyncMethod )
   g_pAddAsyncMethod = asyncMethod;
 }
 
-var g_pJSExceptionHandler = undefined;
 
-function setJSExceptionHandler( exceptionHandler )
-{
-  if (typeof exceptionHandler == "function") {
-      g_pJSExceptionHandler = exceptionHandler;
-  } // end if
-} // end setJSExceptionHandler
-
-function hasJSExceptionHandler()
-{
-  return (g_pJSExceptionHandler != undefined) && (typeof g_pJSExceptionHandler == "function");
-} // end hasJSExceptionHandler
-
-function doJSExceptionHandler( exceptionJSON )
-{
-  if (typeof g_pJSExceptionHandler == "function") {
-    var exception = JSON.parse( exceptionJSON );
-    g_pJSExceptionHandler( exception );
-  } // end if
-} // end doJSExceptionHandler
 
 function manifestFiles()
 {
